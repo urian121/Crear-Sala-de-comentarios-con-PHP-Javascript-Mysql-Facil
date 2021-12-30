@@ -13,20 +13,30 @@
     
     <div class="chat">
         <div class="chat-texts">
-          <?php include('msjs.php'); ?>
+          <!--<div id="msjs" style="border: 1px solid red;">-->
+            <?php include('msjs.php'); ?>
+          <!--</div>-->
         </div>
       
+
+
         <div class="send-message">
           <div class="message-text">
-            <div class="smiley"><i class="lni lni-smile"></i></div>
-            <input type="text" placeholder="Escribe tu mensajes aqui">
-            <div class="attachment"><i class="lni lni-upload"></i></div>
+          
+          <!--<div class="smiley"><i class="lni lni-smile"></i></div>-->
+          <form  class="formSend" name="formSend" id="formSend" action="" method="post">
+            <input type="text" name="msjUser" id="msjUser" placeholder="Escribe tu mensaje aqui" autofocus>
+          </form>
+          <!-- <div class="attachment"><i class="lni lni-upload"></i></div> -->
           </div>
-          <button><i class="lni lni-arrow-right-circle"></i></button>
+          <button type="submit" name="btnSend" id="btnSend"><i class="lni lni-arrow-right-circle"></i></button>
         </div>
+      
       
     </div>
 
-      <script src="js/scriptChat.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <script src="js/scriptChat.js"></script>
 </body>
 </html>
