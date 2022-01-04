@@ -23,8 +23,7 @@ $(function(){
                  scrollMsjs(); //llamando la funcion
                 },
                success: function(data){
-                $(".chat-texts").load( "msjs.php", function() { });
-                 // $(".audio")[0].play();  //reproducir audio de envio
+                  $(".chat-texts").load( "msjs.php", function() { });
                   $("#formSend")[0].reset();
                }
              });
@@ -38,3 +37,9 @@ $(function(){
     var scrolltoh = $('.chat-texts')[0].scrollHeight;
     $('.chat-texts').scrollTop(scrolltoh);
 }
+
+
+$("#loginUser").on('click', function(e){
+  e.preventDefault();
+  $('.modalLogin').addClass('showModal'); //Mostar Modal
+});
