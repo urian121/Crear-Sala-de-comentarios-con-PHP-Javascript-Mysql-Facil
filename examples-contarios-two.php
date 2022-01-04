@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-  <title>Document</title>
+  <title>Sala de comentarios</title>
   <style>
 body {
   box-sizing: border-box;
@@ -90,21 +90,30 @@ footer {
 </head>
 <body>
 
+  <?php
+  include('config.php');
+  $sqlMsjs = ("SELECT * FROM salacomentarios ORDER BY id ASC");
+  $querySqlMsjs = mysqli_query($con, $sqlMsjs);
+  ?>
+
   <div class="container">
   
     <header>
-      <h2>Recent news</h2>
+      <h2 style="text-align: center;">Lista de Comentarios</h2>
     </header>
     
     <div class="media">
       <div class="media-image">
       </div>
+    <?php
+      while ($dataMsjs = mysqli_fetch_array($querySqlMsjs)) { ?>
       <div class="media-body">
         <h3>Title</h3>
         <p>Aptent vel egestas vestibulum aliquam ullamcorper volutpat
     ullamcorper pharetra hac posuere a rhoncus purus molestie torquent. Scelerisque
     purus cursus dictum ornare a phasellus. A augue venenatis adipiscing.</p>
      </div>
+     <?php } ?>
     </div>
     
     <div class="media">
