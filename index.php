@@ -11,11 +11,11 @@
 </head>
 <body>
     
+
     <div class="chat">
         <div class="chat-texts">
-          <!--<div id="msjs" style="border: 1px solid red;">-->
             <?php include('msjs.php'); ?>
-          <!--</div>-->
+            <div id="scroll"></div>
         </div>
       
 

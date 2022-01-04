@@ -1,11 +1,14 @@
 
+
 const text = document.querySelectorAll(".text");
 let delay = 0;
 text.forEach(el=>{
   el.style.animation = "fade-in 1s ease forwards";
   el.style.animationDelay= delay +"s";
   delay += 0.20;
-});
+}); 
+
+
 
 //Enviando msjs a BD
 $(function(){
@@ -17,20 +20,10 @@ $(function(){
                url: url,
                data: $("#formSend").serialize(),
                 complete:function(data){
-                 //scrollMsjs(); //llamando la funcion
+                 scrollMsjs(); //llamando la funcion
                 },
                success: function(data){
-                $.get("msjs.php", function(data){
-                  $('.chat-texts').html(data);
-                  //$('.chat-texts').html(data);
-                });
-
-                /*  $.post("hola.php", function (data) {
-                    $(".chat-texts").html(data);
-                  }); */
-
-                //$('#resp').html(data);
-                 //$('#conversation').html(data);
+                $(".chat-texts").load( "msjs.php", function() { });
                  // $(".audio")[0].play();  //reproducir audio de envio
                   $("#formSend")[0].reset();
                }
