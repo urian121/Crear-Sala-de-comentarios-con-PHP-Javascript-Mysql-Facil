@@ -7,8 +7,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$filename        = $_FILES['photoUser']['name'];
 	$sourceFoto      = $_FILES['photoUser']['tmp_name'];
 
-	//cambiando nombre a la foto
-	$newNameFoto    = trim($nameUser);
+
+	$logitudName    = 10;
+	$StringName     = substr( md5(microtime()), 1, $logitudName);
+
+	$newNameFoto    = trim($nameUser.$StringName); //quitando espacios en blaco y concatenando un string al nombre del usuario
 	$explode        = explode('.', $filename);
 	$extension_foto = array_pop($explode);
 	$nuevoNameFoto  = $newNameFoto.'.'.$extension_foto;
@@ -24,10 +27,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(move_uploaded_file($sourceFoto, $target_path)) {
     
 		//IMPORTANTE: Creando la COOKIE del usuario nuevo que se acaba de registrar
-		$miCookies = "user-presente";
+		$miCookies = "user_presente";
 		setcookie("$miCookies", $nameUser, time() + (43200)); //86400 = 1 dia y 43200 = 12 horas
 	
-		$miCookies = "user-presente-photo";
+		$miCookies = "user_presente_photo";
 		setcookie("$miCookies", $nuevoNameFoto, time() + (43200));
    }
 

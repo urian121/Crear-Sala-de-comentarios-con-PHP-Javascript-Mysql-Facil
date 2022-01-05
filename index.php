@@ -21,7 +21,7 @@
     
 <?php
 //si exite la varible $_COOKIE['user-presente'] no mostramos el formulario
-if(!isset($_COOKIE['user-presente'])){ 
+if(!isset($_COOKIE['user_presente'])){ 
   include('modal-Inicio.php'); 
 }?>
 
@@ -34,20 +34,12 @@ if(!isset($_COOKIE['user-presente'])){
         <div class="send-message">
           <div class="message-text">
           
-          <!---primero: pregunto si ya existe algun usuario registrado por cookies -->
-          <?php
-           if(!isset($_COOKIE['user-presente'])){ ?>
-           <label for="nameUser" style="color: crimson; font-weight:bold; text-align:center;"> Cual es tu Nombre</label>
-            <form  class="formSend" name="formSend" id="formSend" action="" method="post">
-            <input type="text" name="msjUser" id="msjUser" placeholder="Tu Nombre" autofocus>
-          </form>
-          <?php }else{ ?>
+      
           <!--<div class="smiley"><i class="lni lni-smile"></i></div>-->
           <form  class="formSend" name="formSend" id="formSend" action="" method="post">
             <input type="text" name="msjUser" id="msjUser" placeholder="Escribe tu mensaje aqui" autofocus>
           </form>
           <!-- <div class="attachment"><i class="lni lni-upload"></i></div> -->
-          <?php } ?>
 
           </div>
           <button type="submit" name="btnSend" id="btnSend">
@@ -56,11 +48,27 @@ if(!isset($_COOKIE['user-presente'])){
 
         </div>
       
-      
+<audio class="audio" style="display:none;">
+  <source src="tono-msj.mp3" type="audio/mp3">
+</audio>
+
     </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
   <script src="js/scriptChat.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  [].forEach.call(document.querySelectorAll('.dropimage'), function(img){
+    img.onchange = function(e){
+      var inputfile = this, reader = new FileReader();
+      reader.onloadend = function(){
+        inputfile.style['background-image'] = 'url('+reader.result+')';
+      }
+      reader.readAsDataURL(e.target.files[0]);
+    }
+  });
+});
+  </script>
 </body>
 </html>

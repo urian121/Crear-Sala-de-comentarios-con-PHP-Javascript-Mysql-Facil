@@ -17,12 +17,12 @@
         <label for="photoUser"><strong>Tu foto de perfil aqui!</strong></label>
             <div style="width: 150px; margin:0 auto;">
             <label class="dropimage profile">
-                <input type="file" name="photoUser" title="Drop image or click me" accept="image/*">
+                <input type="file" name="photoUser" title="Drop image or click me" accept="image/*" required>
             </label>
             </div>
         </div>
 
-        <input type="submit" name="enviar" value="Entrar Ahora!">
+        <input type="submit" name="enviar" value="Entrar Ahora!"  id="entrar">
     </form>
   </div>
 </div>
