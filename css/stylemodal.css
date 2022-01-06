@@ -76,3 +76,11 @@
     border-radius: 0;
     padding: 10px 0;
   }
+
+*:focus {
+    outline: none;
+}
+
+input {
+ outline:none;
+}
