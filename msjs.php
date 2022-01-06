@@ -10,7 +10,8 @@ while ($dataMsjs = mysqli_fetch_array($querySqlMsjs)) {
     <div class="profile-pic">
        <img src="./fotosUsers/<?php echo $dataMsjs["user_presente_photo"]; ?>" alt=""> </div>
        <div class="text-content">
-      <h5><?php echo ucwords($dataMsjs["user_presente"]); ?></h5>
+         <h5><?php echo ucwords($dataMsjs["user_presente"]); ?></h5>
+         <?php echo $dataMsjs["msjUser"]; ?>
       <span class="timestamp"><?php echo $dataMsjs["HoursMsjs"]; ?></span>
     </div>
   </div>
