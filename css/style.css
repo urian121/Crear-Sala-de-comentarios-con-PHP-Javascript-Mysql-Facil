@@ -36,14 +36,14 @@
 html,
 body {
   height: 100%;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #f9f9f9;
 }
 
 body {
   display: grid;
   place-items: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 img {
@@ -53,9 +53,8 @@ img {
 
 .chat {
   width: 80%;
-  max-width: 400px;
+  max-width: 500px;
   min-width: 350px;
-  max-height: 600px;
   border-radius: 30px;
   background: white;
   box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.2);
@@ -210,7 +209,7 @@ button:hover {
   cursor: pointer;
 }
 
-#entrar{
+#entrar {
   padding: 10px 60px;
   margin-top: 30px;
   background-color: crimson;
@@ -218,6 +217,6 @@ button:hover {
   color: #fff;
   font-weight: 600;
 }
-#entrar:hover{
+#entrar:hover {
   cursor: pointer;
 }
